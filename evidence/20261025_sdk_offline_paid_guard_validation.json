@@ -1,0 +1,21 @@
+{
+  "observedDateKST": "2026-10-25",
+  "workspace": "vm-05:/srv/multi-vm-agent/workspace/make_money2",
+  "framework": "CrewAI using the installed official Python x402 v2 SDK",
+  "crewaiVersionTested": "1.15.30",
+  "officialPythonX402VersionTested": "2.25.0",
+  "testsPassed": 29,
+  "testsFailed": 0,
+  "priorTests": 14,
+  "newSyntheticSdkSignedPathTests": 4,
+  "newMockedOnchainProofTests": 11,
+  "realFreeSampleHttp": 200,
+  "realUnpaidBriefHttp": 402,
+  "realPaidTransactionExecuted": false,
+  "mockKeysArePublicFictionalFixtures": true,
+  "mockReceiptIsNotRealProof": true,
+  "onchainProofFromRealMainnet": null,
+  "bountyClaimSent": false,
+  "newExternalRevenueUSDC": "0",
+  "ownerFundsSpentUSDC": "0"
+}

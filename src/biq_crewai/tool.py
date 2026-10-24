@@ -57,10 +57,11 @@ class BlockchainIQMarketBriefTool(BaseTool):
             raise ValueError("Expected JSON object from Blockchain IQ")
 
         receipt_header = response.headers.get("PAYMENT-RESPONSE")
-        # In paid mode we never count a 200/synthetic mock as a paid success.
+        # A syntactically valid issuer header is NOT independent on-chain settlement proof.
         receipt = validate_settlement_receipt(receipt_header) if self._need_real_settlement else None
         result = {"source": "Blockchain IQ", "resource": "brief",
-                  "paidReceiptVerified": receipt is not None, "payload": data}
+                  "settlementHeaderValidated": receipt is not None,
+                  "independentOnchainVerified": False, "payload": data}
         if receipt is not None:
             result["settlement"] = receipt
         return json.dumps(result, ensure_ascii=False)

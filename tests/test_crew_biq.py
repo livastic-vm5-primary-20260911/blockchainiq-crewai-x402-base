@@ -48,7 +48,7 @@ class CrewAIIntegrationTests(unittest.TestCase):
     def test_request_pinned_and_no_payment_by_default(self):
         value = json.loads(self.tool._run())
         self.assertEqual(value["payload"]["data"]["btc"], 100)
-        self.assertFalse(value["paidReceiptVerified"])
+        self.assertFalse(value["settlementHeaderValidated"])
         args, kwargs = self.http.get.call_args
         self.assertEqual(args[0], BRIEF_URL)
         self.assertFalse(kwargs["allow_redirects"])
